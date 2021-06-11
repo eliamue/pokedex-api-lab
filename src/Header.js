@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 export default class Header extends Component {
     render() {
         return (
-            <div>
+            <header>
                 <h1>Pokemon Header</h1>
-            </div>
+            </header>
         )
     }
 }
