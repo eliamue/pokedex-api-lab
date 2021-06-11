@@ -11,7 +11,7 @@ export default class ListPage extends Component {
         pokemonlist: [],
         query: '',
         sortBy: 'asc'
-    } 
+    }
 
     componentDidMount = async () => {
         await this.fetchData();
@@ -28,16 +28,19 @@ export default class ListPage extends Component {
     }
 
     handleSort = async (e) => {
-        await this.setState({
+        this.setState({
             sortBy: e.target.value
         })
-        await this.fetchData();
     }
 
     fetchData = async () => {
+        this.setState({
+            loading: true
+        })
+        
         const URL = this.state.query
-            ? `https://pokedex-alchemy.herokuapp.com/api/pokedex?search=${this.state.query}`
-            : 'http://pokedex-alchemy.herokuapp.com/api/pokedex';
+            ? `https://pokedex-alchemy.herokuapp.com/api/pokedex?pokemon=${this.state.query}&sort=pokemon&direction=${this.state.sortBy}`
+            : `http://pokedex-alchemy.herokuapp.com/api/pokedex?sort=pokemon&direction=${this.state.sortBy}`;
 
         const data = await request.get(URL)
         console.log(data)
