@@ -4,9 +4,10 @@ body {
   flex-direction: column;
   width: 100%;
   height: 100%;
-  background-color: pink;
+  background-color: rgba(85, 217, 227, 0.733);
   justify-content: center;
   align-items: center;
+  margin-top: 100px;
 }
 
 .App {
@@ -17,23 +18,20 @@ body {
 header {
   display: flex;
   flex-direction: row;
-  background-color: rgba(137, 43, 226, 0.283);
+  background-color: rgba(43, 92, 226, 0.283);
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  width: 150px;
-  height: 100px;
-  margin: 10px;
+  height: 80px;
   text-align: flex-end;
   padding-left: 25px;
-  border-radius: 30px;
 }
 
 footer {
   display: flex;
   flex-direction: row;
-  background-color: rgba(137, 43, 226, 0.283);
+  background-color: rgba(43, 92, 226, 0.283);
   position: fixed;
   bottom: 0;
   left: 0;
@@ -49,28 +47,27 @@ footer {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: column;
-  background-color: rgba(113, 20, 220, 0.719);
+  background-color: rgba(20, 73, 220, 0.719);
   justify-content: space-between;
   align-items: center;
-  margin: 20px;
+  margin: 10px;
   width: min-content;
-  border: 10px double blueviolet;
+  border: 10px double rgb(43, 125, 226);
   border-radius: 20px;
 }
 
 .stats {
   text-align: center;
-  border: 5px double purple;
+  border: 5px double rgb(0, 66, 128);
   border-radius: 20px;
-  margin: 20px;
+  margin: 10px;
   width: max-content;
-  padding: 10px;
+  padding: 5px;
 }
 
 .pokeimg {
   height: 300px;
   width: 300px;
-  background-color: blue;
 }
 
 .spinner {
@@ -93,4 +90,11 @@ footer {
   align-items: center;
   margin: 20px;
   justify-self: center;
+}
+
+.fuckthis {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: rgba(0, 81, 255, 0.466);
 }
