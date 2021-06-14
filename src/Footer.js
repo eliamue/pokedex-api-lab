@@ -4,7 +4,7 @@ export default class Footer extends Component {
     render() {
         return (
             <footer>
-                <h4>Pokemon Footer</h4>
+                poke poke
             </footer>
         )
     }
