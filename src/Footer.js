@@ -4,7 +4,7 @@ export default class Footer extends Component {
     render() {
         return (
             <footer>
-                <button className="next-btn">Next</button>
+                poke poke
             </footer>
         )
     }

@@ -4,7 +4,7 @@ import ListPage from './ListPage.js';
 import Footer from './Footer.js';
 import Home from './Home.js';
 import './App.css';
-import PokeDetail from './PokemonDetail.js'
+import PokemonDetail from './PokemonDetail.js'
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
       <div className="full">
         <Header />
         <Switch>
-          <Route path="/pokemon/:id" exact component={PokeDetail}/>
+          <Route path="/pokemon/:id" exact component={PokemonDetail}/>
           <Route path="/pokemon" exact component={ListPage}/>
           <Route path="/" exact component={Home}/>
         </Switch>
