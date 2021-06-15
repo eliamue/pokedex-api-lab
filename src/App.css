@@ -9,6 +9,7 @@ body {
   align-items: center;
   margin-top: 100px;
   margin-left: 20px;
+  margin-bottom: 50px;
 }
 
 .App {
@@ -64,8 +65,8 @@ footer {
   justify-content: space-between;
   align-items: center;
   margin: 15px;
-  width: 150px;
-  height: 500px;
+  width: 200px;
+  height: fit-content;
   border: 5px solid rgb(0, 110, 244);
   border-radius: 20px;
   text-transform: capitalize;
@@ -75,14 +76,14 @@ footer {
   text-align: center;
   border: 5px double rgb(0, 66, 128);
   border-radius: 20px;
-  max-height: 300px;
   width: 100px;
   padding: 0;
 }
 
 .pokeimg {
-  height: 150px;
-  width: 150px;
+  height: 200px;
+  width: 200px;
+  margin-top: -10px;
 }
 
 .spinner {
@@ -115,4 +116,23 @@ footer {
 
 p {
   font-size: 10px;
+}
+
+.nav-butt {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  position: fixed;
+  bottom: 0;
+  background-color:rgba(43, 92, 226, 0.358);
+  margin-left: -20px;
+}
+
+.next-butt {
+  margin: 10px;
+  margin-right: 50px;
+}
+
+.prev-butt {
+  margin: 10px
 }

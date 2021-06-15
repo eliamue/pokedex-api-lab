@@ -29,39 +29,58 @@ export default class PokemonDetail extends Component {
 
     render() {
         return (
-            <div>
+            <div className="detail-stats" style={{'backgroundColor': `${this.state.pokemonDetail.color_1}`}}>
                 {this.state.loading && <Spinner />}
                 {!this.state.loading && (
                     <>
-                        <h3>{this.props.match.params.id}</h3>
-                        <h1 className="poke-name">{this.state.pokemonDetail.pokemon}</h1>
-                        <img className="pokeimg" src={this.state.pokemonDetail.url_image} alt={this.state.pokemonDetail.pokemon} />
+                    
+                        <h3 className="hidden">{this.props.match.params.id}</h3>
 
-                    <section className="types">
-                        <h3>Type 1:</h3>
-                            <h4>{this.state.pokemonDetail.type_1}</h4>
-                        <h3>Type 2:</h3>
-                            <h4>{this.state.pokemonDetail.type_2}</h4>
+                    <section className="mugshot">
+                        <img className="pokeimg" src={this.state.pokemonDetail.url_image} alt={this.state.pokemonDetail.pokemon} />
+                        <h1 className="poke-name">{this.state.pokemonDetail.pokemon}</h1>
+                        <section className="types">
+                            <div className="type1">
+                                <h3>Type:</h3>
+                                <h4>{this.state.pokemonDetail.type_1}</h4>
+                            </div>
+                            <div className="type2">
+                                {this.state.pokemonDetail.type_2 === 'NA' 
+                                ? <p style={{display: "none"}}></p> 
+                                : <><h3>Secondary Type:</h3>
+                                <h4>{this.state.pokemonDetail.type_2}</h4></>}
+                            </div>
+                        </section>
                     </section>
 
                     <section className="battle-stats">
-                        <h2>Battle Stats</h2>
                             <h3>Attack:</h3>
                                 <h4>{this.state.pokemonDetail.attack}</h4>
                             <h3>Defense:</h3>
                                 <h4>{this.state.pokemonDetail.defense}</h4>
+                            <h3>Speed:</h3>
+                                <h4>{this.state.pokemonDetail.speed}</h4>
                             <h3>HP:</h3>
                                 <h4>{this.state.pokemonDetail.hp}</h4>
                     </section>
 
                     <section className="abilities">
-                        <h2>Special Ablities</h2>
-                            <h3>Ability 1:</h3>
+                        <h4 className="adopt">Adoption price:</h4>
+                        <h1 className="price">
+                            ${this.state.pokemonDetail.base_experience}
+                        </h1>
+
+                            <h3>Special Ability:</h3>
                                 <h4>{this.state.pokemonDetail.ability_1}</h4>
-                            <h3>Ablity 2:</h3>
-                                <h4>{this.state.pokemonDetail.ability_2}</h4>
-                            <h3>Hidden Ability:</h3>
-                                <h4>{this.state.pokemonDetail.ability_hidden}</h4>
+                            {this.state.pokemonDetail.ability_2 === 'NA' 
+                            ? <p style={{display: "none"}}></p> 
+                            : <><h3>Secondary Ability:</h3>
+                            <h4>{this.state.pokemonDetail.ability_2}</h4></>}
+
+                            {this.state.pokemonDetail.ability_hidden === 'NA' 
+                            ? <p style={{display: "none"}}></p> 
+                            : <><h3>Hidden Ability:</h3>
+                            <h4>{this.state.pokemonDetail.ability_hidden}</h4></>}
                     </section>
                     </>
                 )}
