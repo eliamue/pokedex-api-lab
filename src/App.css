@@ -18,8 +18,10 @@ body {
 }
 
 h1 {
-  font-size: 20px;
+  font-size: 25px;
   text-align: center;
+  text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.502);
+  color:rgb(218, 252, 255);
 }
 
 h3 {
@@ -70,6 +72,13 @@ footer {
   border: 5px solid rgb(0, 110, 244);
   border-radius: 20px;
   text-transform: capitalize;
+}
+
+.pokecard:hover {
+  background-color: rgb(55, 202, 255);
+  border: 5px solid rgb(169, 227, 235);
+  box-shadow: 5px 5px 15px black;
+  color: rgb(157, 247, 248);
 }
 
 .stats {
