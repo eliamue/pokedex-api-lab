@@ -9,6 +9,7 @@ body {
   align-items: center;
   margin-top: 100px;
   margin-left: 20px;
+  margin-bottom: 50px;
 }
 
 .App {
@@ -17,8 +18,10 @@ body {
 }
 
 h1 {
-  font-size: 20px;
+  font-size: 25px;
   text-align: center;
+  text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.502);
+  color:rgb(218, 252, 255);
 }
 
 h3 {
@@ -64,25 +67,32 @@ footer {
   justify-content: space-between;
   align-items: center;
   margin: 15px;
-  width: 150px;
-  height: 500px;
+  width: 200px;
+  height: fit-content;
   border: 5px solid rgb(0, 110, 244);
   border-radius: 20px;
   text-transform: capitalize;
+}
+
+.pokecard:hover {
+  background-color: rgb(55, 202, 255);
+  border: 5px solid rgb(169, 227, 235);
+  box-shadow: 5px 5px 15px black;
+  color: rgb(157, 247, 248);
 }
 
 .stats {
   text-align: center;
   border: 5px double rgb(0, 66, 128);
   border-radius: 20px;
-  max-height: 300px;
   width: 100px;
   padding: 0;
 }
 
 .pokeimg {
-  height: 150px;
-  width: 150px;
+  height: 200px;
+  width: 200px;
+  margin-top: -10px;
 }
 
 .spinner {
@@ -115,4 +125,23 @@ footer {
 
 p {
   font-size: 10px;
+}
+
+.nav-butt {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  position: fixed;
+  bottom: 0;
+  background-color:rgba(43, 92, 226, 0.358);
+  margin-left: -20px;
+}
+
+.next-butt {
+  margin: 10px;
+  margin-right: 50px;
+}
+
+.prev-butt {
+  margin: 10px
 }

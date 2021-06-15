@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import Spinner from './Spinner.js';
 import request from 'superagent';
-import PokeList from './PokeList.js'
+import PokeList from './PokeList.js';
+import './App.css'
 
 const sleep = (x) => new Promise((res, rej) => setTimeout(() => { res() }, x))
 
 export default class ListPage extends Component {
     state = {
-        loading: false,
+        loading: true,
         pokemonlist: [],
         query: '',
         sortBy: 'asc',
@@ -19,18 +20,20 @@ export default class ListPage extends Component {
     };
 
     nextPage = async (e) => {
-        await this.setState({ page: this.state.page + 1 })
+        await this.setState({ 
+            page: this.state.page + 1, 
+            loading: true
+        })
         this.fetchData();
     };
 
     prevPage = async (e) => {
-        await this.setState({ page: this.state.page - 1 })
+        await this.setState({ 
+            page: this.state.page - 1,
+            loading: true 
+        })
         this.fetchData();
     };
-
-    // handleClick = async () => {
-    //     await this.fetchData()
-    // };
 
     handleChange = (e) => {
         this.setState({
@@ -61,23 +64,12 @@ export default class ListPage extends Component {
             `https://pokedex-alchemy.herokuapp.com/api/pokedex?${searchParams.toString()}`
         );
 
-        // const location = {pathname: this.props.location.pathname,
-        // search: searchParams.toString()
-        // this.props.history.push(location);
-        // this.setState({
-        //     loading: true,
-        // })
-        await sleep(1000)
+        await sleep(800)
         this.setState({ 
             pokemonlist: data,
             loading: false,
         })
     };
-        
-    //const URL = this.state.query
-    //    ? `https://pokedex-alchemy.herokuapp.com/api/pokedex?pokemon=${this.state.query}&sort=pokemon&direction=${this.state.sortBy}`
-    //     : `http://pokedex-alchemy.herokuapp.com/api/pokedex?sort=pokemon&direction=${this.state.sortBy}`;
-
 
     render() {
         return (
@@ -95,14 +87,16 @@ export default class ListPage extends Component {
                         : <PokeList
                             pokemonlist={this.state.pokemonlist}
                             />
-                    }     
-                        {this.state.page - 1 > 0 && (
-                                <button onClick={this.prevPage}> Previous Page ({this.state.page - 1})
-                                </button>
+                    }
+                <div className="nav-butt">
+                    {this.state.page - 1 > 0 && (
+                    <button className="prev-butt" onClick={this.prevPage}> Previous ({this.state.page - 1})
+                    </button>
                             )}
-                    <button onClick={this.nextPage}> Next Page ({this.state.page + 1})</button>
+                    <button className="next-butt" onClick={this.nextPage}> Next ({this.state.page + 1})</button>  
+                </div>   
             </div>
             </>
-    );
-};
+        );
+    };
 }
