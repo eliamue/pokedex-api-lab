@@ -68,6 +68,7 @@ footer {
   height: 500px;
   border: 5px solid rgb(0, 110, 244);
   border-radius: 20px;
+  text-transform: capitalize;
 }
 
 .stats {
@@ -106,7 +107,7 @@ footer {
   justify-self: center;
 }
 
-.fuckthis {
+.poke-list {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
