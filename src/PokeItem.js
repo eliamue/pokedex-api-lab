@@ -5,33 +5,44 @@ export default class Pokeitem extends Component {
         return (
             <div className="pokecard">
                 <h1>{this.props.data.pokemon}</h1>
-                <img className="pokeimg" src={this.props.data.url_image} alt={this.props.data.pokemon} />
+
+                <img 
+                className="pokeimg" 
+                src={this.props.data.url_image} 
+                alt={this.props.data.pokemon} 
+                />
+
                 <section className="stats">
-                    <h3 className="type">Type:</h3> 
+                    <div className="type">
+                        <h3>Type:</h3> 
                         <p>
-                            {this.props.data.type_1}, 
-                            {this.props.data.type_2}
+                            {this.props.data.type_1} 
                         </p>
-                    <h4 className="attack">Attack:</h4>
+                    </div>
+                    <div className="attack">
+                        <h4>Attack:</h4>
                         <p>
                             {this.props.data.attack}
                         </p>
-                    <h4 className="defense">Defense:</h4>
+                    </div>
+                    <div className="defense">
+                        <h4>Defense:</h4>
                         <p>
                             {this.props.data.defense}
                         </p>
-                    <h4 className="hp">HP:</h4> 
+                    </div>
+                    <div className="hp">
+                        <h4>HP:</h4>
                         <p>
                             {this.props.data.hp}
                         </p>
-                    <h4 className="abilities">Special Abilities:</h4> 
+                    </div>
+                    <div className="abilities">
+                        <h4>Special Ability:</h4> 
                         <p>
                             {this.props.data.ability_1}
-                            <br></br>  
-                            {this.props.data.ability_2}
-                            <br></br>
-                            {this.props.data.ability_hidden}
                         </p>
+                    </div>
                 </section>
             </div>
         )
